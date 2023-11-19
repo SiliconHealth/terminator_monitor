@@ -62,7 +62,7 @@ dt_df = pd.DataFrame(dt).groupby([0]).size().cumsum()
 ind = list(dt_df.index)
 dt_df = dt_df.reset_index(drop=True)
 dt_df = pd.DataFrame({'date': ind, 'count': dt_df.values})
-print(dt_df)
+
 st.line_chart(dt_df, x='date', y='count')
 
 
