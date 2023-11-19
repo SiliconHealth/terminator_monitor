@@ -1,7 +1,7 @@
 import streamlit as st
 
-from components.test_lib import id 
-from components.dev_db import db
+# from components.test_lib import id 
+# from components.dev_db import db
 # from components.track import track_component
 from db.database import get_db
 
