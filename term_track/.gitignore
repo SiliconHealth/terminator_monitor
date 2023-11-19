@@ -1,0 +1,4 @@
+.env
+dev_notebooks
+dev_*
+test_*
