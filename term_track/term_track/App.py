@@ -11,7 +11,7 @@ import numpy as np
 from PIL import Image
 import streamlit as st
 
-im = Image.open("./data/siliconhealthicon.ico")
+im = Image.open("/app/terminator_monitor/term_track/term_track/data/siliconhealthicon.ico")
 
 db, title = get_db()
 
