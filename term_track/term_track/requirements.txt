@@ -583,6 +583,9 @@ six==1.16.0 ; python_version >= "3.10" \
 smmap==5.0.1 ; python_version >= "3.10" \
     --hash=sha256:dceeb6c0028fdb6734471eb07c0cd2aae706ccaecab45965ee83f11c8d3b1f62 \
     --hash=sha256:e6d8668fa5f93e706934a62d7b4db19c8d9eb8cf2adbb75ef1b675aa332b69da
+streamlit-ext==0.1.9 ; python_version >= "3.10" \
+    --hash=sha256:60b37575f75855c82b026b34b17c457735ff0f6cb500e292596930745674d5af \
+    --hash=sha256:eb7e366f45fb275433465f3211fbc0c59153d25b4a40c304666c2fc4fc8112ac
 streamlit==1.28.2 ; python_version >= "3.10" \
     --hash=sha256:c144168881bf7bd6d6017a9bfde585b52d20087b10b2d5c85d376ef6d52aa8ee \
     --hash=sha256:cc144c4741a1bd850ccd13f1ef18fad170718242dd7930f4ae36e238d08ecd22

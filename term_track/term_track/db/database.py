@@ -16,10 +16,10 @@ host = os.getenv('HOST')
 db = os.getenv('DATABASE')
 
 def get_db():
-    print(user, password, host, db)
+    # print(user, password, host, db)
     uri = "mongodb://%s:%s@%s" % (
         user, password, host)
-    print(uri)
+    # print(uri)
     client = MongoClient(uri)
 
     if db in client.list_database_names():

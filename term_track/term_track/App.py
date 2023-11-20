@@ -11,7 +11,8 @@ import numpy as np
 from PIL import Image
 import streamlit as st
 
-im = Image.open("/app/terminator_monitor/term_track/term_track/data/siliconhealthicon.ico")
+# im = Image.open("/app/terminator_monitor/term_track/term_track/data/siliconhealthicon.ico")
+im = Image.open("siliconhealthicon.ico")
 
 db, title = get_db()
 
@@ -22,6 +23,16 @@ st.set_page_config(
 
 st.sidebar.success("Success! Select a page above.")
 st.title(title)
+
+st.markdown(
+    """
+    This is for Siliconers to track the progress of annotation.
+    **👈 Select an app from the sidebar** to see progress and download datasets.
+    
+    - Check out [our github](https://github.com/SiliconHealth)
+    - Our discord channel is [here](https://discord.gg/NX3JFXt6)
+    """
+)
 
 if db is not None:
     pass 

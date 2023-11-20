@@ -1130,6 +1130,26 @@ watchdog = {version = ">=2.1.5", markers = "platform_system != \"Darwin\""}
 snowflake = ["snowflake-connector-python (>=2.8.0)", "snowflake-snowpark-python (>=0.9.0)"]
 
 [[package]]
+name = "streamlit-ext"
+version = "0.1.9"
+description = "Small handy widgets for streamlit, e.g. download button which won't cause rerun, set page width"
+category = "main"
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "streamlit-ext-0.1.9.tar.gz", hash = "sha256:eb7e366f45fb275433465f3211fbc0c59153d25b4a40c304666c2fc4fc8112ac"},
+    {file = "streamlit_ext-0.1.9-py3-none-any.whl", hash = "sha256:60b37575f75855c82b026b34b17c457735ff0f6cb500e292596930745674d5af"},
+]
+
+[package.dependencies]
+packaging = "*"
+streamlit = "*"
+
+[package.extras]
+dev = ["black (>=22.6.0)", "flake8 (>=4.0,<5.0)", "isort (>=5.10.1)", "mypy", "pandas-stubs (>=1.4.3)"]
+test = ["openpyxl", "pandas", "pytest (>=7.1)", "pytest-cov (>=3.0.0)"]
+
+[[package]]
 name = "tenacity"
 version = "8.2.3"
 description = "Retry code until it succeeds"
@@ -1351,4 +1371,4 @@ testing = ["big-O", "jaraco.functools", "jaraco.itertools", "more-itertools", "p
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.10"
-content-hash = "a9d378cbdb58b4d2fda289731b969b9dca5795772565cd5b0c869cfcf2563575"
+content-hash = "e643d4fb4639b18fc988f9873dc2a696fba8f4813289e9dfafa4b001a198cbec"

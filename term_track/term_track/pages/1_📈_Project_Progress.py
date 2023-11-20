@@ -66,6 +66,18 @@ dt_df = pd.DataFrame({'date': ind, 'count': dt_df.values})
 st.line_chart(dt_df, x='date', y='count')
 
 
+# Annotator progress
+users = list(db["user"].find({}, {"name": 1}))
+user_dict = {str(u['_id']): u['name']['fname'] + " " + u['name']['lname'] for u in users }
+
+user_df = pd.DataFrame([user_dict[a['user_oid']] for a in annot_list]).groupby(0).size()
+user_df = user_df.to_frame().rename(
+    columns={0: "count"}).sort_values(
+    by="count", ascending=False).reset_index().rename(
+        columns={0: "annotator"})
+st.bar_chart(user_df, x='annotator', y='count')
+
+
 # Streamlit widgets automatically run the script from top to bottom. Since
 # this button is not connected to any other logic, it just causes a plain
 # rerun.
