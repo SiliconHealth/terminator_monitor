@@ -52,7 +52,7 @@ def build_json(proj_id, db):
     annots = db["annotation"].find({"proj_oid": quote_plus(proj_id)})
     annot_list = list(annots)
 
-    annot_doc_ids = [a['doc_id'] for a in annot_list]
+    annot_doc_ids = list(set([a['doc_id'] for a in annot_list]))
     window_size = 20 # number of characters to include before and after annotation
 
     # no annotation
