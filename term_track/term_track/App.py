@@ -11,8 +11,12 @@ import numpy as np
 from PIL import Image
 import streamlit as st
 
+from pathlib import Path
+import os 
+data_path = os.getenv('DATA_PATH')
+
 # im = Image.open("/app/terminator_monitor/term_track/term_track/data/siliconhealthicon.ico")
-im = Image.open("siliconhealthicon.ico")
+im = Image.open(Path(data_path) / "siliconhealthicon.ico")
 
 db, title = get_db()
 
