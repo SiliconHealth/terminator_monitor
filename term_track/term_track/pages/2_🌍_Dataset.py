@@ -96,6 +96,7 @@ def build_json(proj_id, db):
         concept_id_list = []
         concept_type_list = []
         context_list = []
+        info_type = []
 
         if len(ann) > 0:
             for a in ann: 
@@ -107,19 +108,21 @@ def build_json(proj_id, db):
                 concept_list.append(a['label']['concept'])
                 concept_id_list.append(a['label']['concept_id'])
                 context_list.append(aa_value[a['start_offset']-window_size: a['end_offset']+window_size])
+                info_type.append(a['infor_type']) # finding, negation, narrative
             dd = pd.DataFrame({"slice_text": slice_text_list, 
                 "start": start_list, 
                 "end": end_list, 
                 "concept": concept_list, 
                 "concept_id": concept_id_list, 
                 "type": concept_type_list,
-                "context": context_list}, 
+                "context": context_list,
+                "info_type": info_type}, 
                 )  
         else:
             print("no annotations")
             no_anno_list.append(aa_value)
             dd = pd.DataFrame(columns = ["slice_text", "start", "end", 
-                            "concept", "concept_id", "type", "context"])
+                            "concept", "concept_id", "type", "context", "info_type"])
             
         progress_bar.progress(i/len(annot_doc_ids))
         status_text.text("{:.0f}% Complete".format( i*100/len(annot_doc_ids)))
